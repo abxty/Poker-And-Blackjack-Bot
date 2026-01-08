@@ -1,0 +1,7 @@
+{% extends 'mastertemplate.html' %}
+
+{% block title %}{{ session['username'] }}{% endblock %}
+
+{% block content %}
+    <p>Your balance is {{ balanceCounter }} </p>
+{% endblock %}

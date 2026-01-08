@@ -1,0 +1,35 @@
+{% extends 'mastertemplate.html' %}
+
+{% block title %}Register Page{% endblock %}
+
+{% block content %}
+<head>
+    <title>
+        Register
+    </title>
+    <style>
+        h1,
+        p1,
+        table {
+            text-align: center;
+        }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <form method="post" align= "center">
+            <h1 style = "font-size:2vw">Please enter your desired username and password</h1>
+            {% if registerMessage %}
+            <tr><td colspan="2"><span class="error">Failed to create user : {{ registerMessage }}</span></td></tr>
+            {% endif %}
+            <table border="1" align= "center">
+                <tr><td>Username</td><td><input type="text" name="username" class="btLoginButton"></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                <tr><td></td><td><input type="submit" value="Register User" class="btLoginButton"></td></tr>
+            </table>
+            <p1 style = "font-size:1vw">Password cannot be shorter than 7 characters and must contain an uppercase letter</p1>
+
+    </form>
+
+<body/>
+{% endblock %}

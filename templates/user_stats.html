@@ -1,0 +1,22 @@
+{% extends 'mastertemplate.html' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
+<h1>Here are your profile statistics</h1>
+<body>
+    <table border="1" align="center">
+        {% for row in rows %}
+        <tr><td>Credits:</td><td>{{row.credits}}</td></tr>
+        <tr><td>Games Won:</td><td>{{row.gameswon}}</td></tr>
+        <tr><td>Games Lost:</td><td>{{row.gameslost}}</td></tr>
+            
+        {% endfor %}
+    </table>
+</body>
+{% endblock %}

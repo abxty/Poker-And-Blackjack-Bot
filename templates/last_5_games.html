@@ -1,0 +1,42 @@
+{% extends 'mastertemplate.html' %}
+
+{% block title %}{{ session['username'] }}{% endblock %}
+
+{% block content %}
+
+    <h1>Here are your last 5 games played!
+        <style>
+            h1, table {
+                text-align: center;
+                border-collapse: collapse;
+            }
+
+            tr { 
+                border: solid;
+                border-width: 1px 0;
+            }
+
+            .centered-elements {
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+    </h1>
+    <body>
+        <div class="centered-elements">
+            <table border="1" align="center">
+                <th>Game</th>
+                <th>Player 1</th>
+                <th>Player 2</th>
+                <th>Player 3</th>
+                <th>Player 4</th>
+                <th>Player 5</th>
+                <th>You</th>
+                {%for row in rows%}
+                <tr><td>Game {{loop.index}}</td><td>{{row.P1_Outcome}}</td><td>{{row.P2_Outcome}}</td><td>{{row.P3_Outcome}}</td><td>{{row.P4_Outcome}}</td><td>{{row.P5_Outcome}}</td><td>{{row.playernumber}}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+{% endblock %}
